@@ -15,11 +15,11 @@ This game should appeal to a very general audience and will be made simple enoug
 
 <h2> User Stories </h2>
 
-- I want to be able to add all of the interactions that I have with the pet to a list, and then view the action and the time it was performed
+- I want to be able to add all of the interactions that I have with the pet to a history log, and then view the action and the time + date it was performed
 
-- I want to be able to view a list of all the available foods and see their corresponding nutritional values 
+- I want to be able to view a list of all the available foods and see their corresponding nutritional and happieness values
 
-- I want to be able to feed the pet one of the food items then see their hunger stat decrease
+- I want to be able to feed the pet one of the food items then see their satiation stat increase
 
 - I want to be able to play with the pet and see its happiness stat increase 
 
