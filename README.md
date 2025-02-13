@@ -15,7 +15,7 @@ This game should appeal to a very general audience and will be made simple enoug
 
 <h2> User Stories </h2>
 
-- I want to be able to add all of the interactions that I have with the pet to a list, and then view the action and the time it was performed
+- I want to be able to add all of the interactions that I have with the pet to a history log, and then view the action and the time it was performed
 
 - I want to be able to view a list of all the available foods and see their corresponding nutritional values 
 
