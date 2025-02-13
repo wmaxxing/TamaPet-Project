@@ -1,7 +1,9 @@
 package ui;
 
+// Main Class 
+
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println("Welcome to my project!");
+        // Create and run tama handler here
     }
 }
