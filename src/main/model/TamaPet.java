@@ -6,4 +6,5 @@ package model;
 
 public class TamaPet {
 
+    
 }

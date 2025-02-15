@@ -6,12 +6,12 @@ package model;
 public class TamaFood {
 
     private String name;
-    private int happienessValue;
-    private int nutritionalValue;
+    private float happienessValue;
+    private float nutritionalValue;
 
     //Requires: That name is not null
     //Effects: Creates an instance of the TamaFood object
-    public TamaFood(String name, int happienessValue, int nutritionalValue) {
+    public TamaFood(String name, float happienessValue, float nutritionalValue) {
         this.name = name;
         this.happienessValue = happienessValue;
         this.nutritionalValue = nutritionalValue;
@@ -23,12 +23,12 @@ public class TamaFood {
     }
 
     //Effects: returns the happieness value of the TamaFood object
-    public int getHappieness() {
+    public float getHappieness() {
         return this.happienessValue;
     }
 
     //Effects: returns the nutritional value of the TamaFood object
-    public int getNutrition() {
+    public float getNutrition() {
         return this.nutritionalValue;
     }
 }
