@@ -30,7 +30,7 @@ public class TamaHistoryTest {
 
     @Test 
     public void getnametest() {
-        assertEquals(testhistory.getName(), "Kimchi");
+        assertEquals(testhistory.getName(), "Feeding");
     }
 
     @Test 
@@ -40,6 +40,6 @@ public class TamaHistoryTest {
 
     @Test 
     public void getdatandtimetest() {
-        assertEquals(testhistory.getDateAndTime(), dtf);
+        assertEquals(testhistory.getDateAndTime(), dt.format(dtf));
     }
 }
