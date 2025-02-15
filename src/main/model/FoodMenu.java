@@ -12,6 +12,7 @@ public class FoodMenu {
 
     //Effects: Creates a FoodMenu object which has a statically typed list of TamaFood objects
     public FoodMenu() {
+        foodList = new ArrayList<TamaFood>();
         foodList.add(new TamaFood("Bacon Cheeseburger", 15, 10));
         foodList.add(new TamaFood("Mochi", 20, 5));
         foodList.add(new TamaFood("Lettuce", -10, 15));
@@ -21,8 +22,8 @@ public class FoodMenu {
     }
 
     //Requires that foodList.size() > index >= 0
-    //Effects: Returns the food object in FoodMenu which is at the provided index used for testing
+    //Effects: Returns the food object in FoodMenu which is at the provided index
     public TamaFood getTamaFood(int index) {
-
+        return foodList.get(index);
     }
 }
