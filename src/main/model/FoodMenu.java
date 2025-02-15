@@ -25,11 +25,4 @@ public class FoodMenu {
     public TamaFood getTamaFood(int index) {
 
     }
-
-    //Requires: findfood is not null
-    //Effects: takes a string of the name of a TamaFood and returns the corresponding TamaFood object
-    // from the FoodMenu list
-    public TamaFood findFood(String findfood) {
-        
-    }
 }
