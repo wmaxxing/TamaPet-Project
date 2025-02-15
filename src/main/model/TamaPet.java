@@ -6,16 +6,19 @@ package model;
 
 public class TamaPet {
 
-    private static final float DEFAULTVALUE = 50;
-    private static final float PLAYHAPPY = 25;
-    private static final float PLAYHUNGER = 10;
-    private float satiation;
-    private float happieness;
+    private static final double DEFAULTVALUE = 50;
+    private static final double PLAYHAPPY = 25;
+    private static final double PLAYHUNGER = 10;
+    private static final double DECAYVAL = 0.1;
+    private double satiation;
+    private double happieness;
     private String name;
 
     //Effects: Creates a TamaPet object with satiation and happieness set to DEFAULTVALUE
     public TamaPet(String name) {
-
+        this.name = name;
+        this.satiation = DEFAULTVALUE; 
+        this.happieness = DEFAULTVALUE;
     }
 
     //Modifies: this 
@@ -23,7 +26,12 @@ public class TamaPet {
     // in order to promote intreacting with the TamaPet if the TamaPet has any stat that is 0
     // then the stat remains at 0 and does not go negative
     public void tamaDecay() {
-
+        if (satiation >= 0.1) {
+            satiation -= DECAYVAL;
+        }
+        if (happieness >= 0.1) {
+            happieness -= DECAYVAL; 
+        }
     }
 
     //Modifies: this
@@ -31,43 +39,54 @@ public class TamaPet {
     // satiation by PLAYHUNGER returns true if the play is successful and false if they TamaPet does not 
     // have enough satiation to play, the happieness stat is capped at 100 and cannot exceed it
     public boolean tamaPlay() { 
-
+        if (satiation >= PLAYHUNGER) {
+            if (happieness > 75) {
+                happieness = 100;
+                satiation -= PLAYHUNGER;
+            } else {
+                happieness += PLAYHAPPY;
+                satiation -= PLAYHUNGER; 
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //Effects: returns the name of the TamaPet object
-    public float getName() {
-
+    public String getName() {
+        return this.name;
     }
 
     //Effects: returns the happieness value of the TamaPet object
-    public float getHappieness() {
-
+    public double getHappieness() {
+        return this.happieness;
     }
     
     //Effects: returns the nutritional value of the TamaPet object
-    public float getSatiation() {
-
+    public double getSatiation() {
+        return this.satiation;
     }
     
     //Requires: name is not null
     //Modifies: this
     //Effects: sets the name of the TamaPet object
     public void setName(String name) {
-
+        this.name = name;
     }
 
     //Requires: 100 >= happieness >= 0
     //Modifies: this
     //Effects: sets the happieness value of the TamaPet object
-    public void setHappieness(float happieness) {
-
+    public void setHappieness(double happieness) {
+        this.happieness = happieness;
     }
 
     //Requires: 100 >= satiation >= 0
     //Modifies: this
     //Effects: sets the satiation value of the TamaPet object
-    public void setSatiation(float satiation) {
-
+    public void setSatiation(double satiation) {
+        this.satiation = satiation; 
     }
     
 }

@@ -69,19 +69,19 @@ public class TamaPetTest {
     public void tamadecayedgetest() {
         testpet.setHappieness(0);
         testpet.setSatiation(0);
-
+        testpet.tamaDecay();
         assertEquals(testpet.getHappieness(), 0);
         assertEquals(testpet.getSatiation(), 0);
 
         testpet.setHappieness(50);
         testpet.setSatiation(0);
-
+        testpet.tamaDecay();
         assertEquals(testpet.getHappieness(), 49.9);
         assertEquals(testpet.getSatiation(), 0);
 
         testpet.setHappieness(0);
         testpet.setSatiation(50);
-
+        testpet.tamaDecay();
         assertEquals(testpet.getHappieness(), 0);
         assertEquals(testpet.getSatiation(), 49.9);
 
