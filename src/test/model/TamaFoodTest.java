@@ -17,9 +17,9 @@ public class TamaFoodTest {
     @Test
     public void constructortest() {
         TamaFood constest = new TamaFood("Kimchi", 10, 10);
-        assertEquals(constest.getName(), testfood.getName());
-        assertEquals(constest.getHappieness(), testfood.getHappieness());
-        assertEquals(constest.getNutrition(), testfood.getNutrition());
+        assertEquals(constest.getName(), "Kimchi");
+        assertEquals(constest.getHappieness(), 10);
+        assertEquals(constest.getNutrition(), 10);
     }
 
     @Test 

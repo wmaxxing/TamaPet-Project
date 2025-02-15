@@ -23,12 +23,12 @@ public class TamaHistory {
     }
 
     //Effects: Returns the event description of the TamaHistory Object
-    public String getName() {
+    public String getDesc() {
 
     }
 
     //Effects: Returns the date and time of the TamaHistory Object
-    public String getName() {
+    public String getDateAndTime() {
 
     }
 }
