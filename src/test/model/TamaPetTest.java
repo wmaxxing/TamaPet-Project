@@ -8,10 +8,14 @@ import org.junit.jupiter.api.Test;
 public class TamaPetTest {
     
     TamaPet testpet;
+    TamaFood testFood1;
+    TamaFood testFood2;
 
     @BeforeEach
     void runBefore() {
         testpet = new TamaPet("Kimchi");
+        testFood1 = new TamaFood("Rice", 10, 10);
+        testFood2 = new TamaFood("Leuttice", -10,10);
     }
 
     @Test
@@ -114,6 +118,35 @@ public class TamaPetTest {
         testpet.setHappieness(75);
         assertTrue(testpet.tamaPlay());
         assertEquals(testpet.getHappieness(), 100);
+        assertEquals(testpet.getSatiation(), 30);
+    }
+
+    @Test 
+    public void tamafeedregular() { 
+        testpet.tamaFeed(testFood1);
+        assertEquals(testpet.getHappieness(), 60);
+        assertEquals(testpet.getSatiation(), 60);
+        testpet.tamaFeed(testFood2);
+        assertEquals(testpet.getHappieness(), 50);
+        assertEquals(testpet.getSatiation(), 70);
+    }
+
+    @Test 
+    public void tamafeedhighcase() { 
+        testpet.setHappieness(99);
+        testpet.setSatiation(95);
+        testpet.tamaFeed(testFood1);
+        assertEquals(testpet.getHappieness(), 100);
+        assertEquals(testpet.getSatiation(), 100);
+
+    }
+
+    @Test 
+    public void tamafeedlowcase() { 
+        testpet.setHappieness(5);
+        testpet.setSatiation(20);
+        testpet.tamaFeed(testFood2);
+        assertEquals(testpet.getHappieness(), 0);
         assertEquals(testpet.getSatiation(), 30);
     }
 }
