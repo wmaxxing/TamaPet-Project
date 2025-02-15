@@ -20,7 +20,9 @@ public class TamaFoodTest {
     @Test
     public void constructortest() {
         TamaFood constest = new TamaFood("Kimchi", 10, 10);
-        assertEquals(constest, testfood);
+        assertEquals(constest.getName(), testfood.getName());
+        assertEquals(constest.getHappieness(), testfood.getHappieness());
+        assertEquals(constest.getNutrition(), testfood.getNutrition());
     }
 
     @Test 
@@ -32,7 +34,7 @@ public class TamaFoodTest {
     public void gethappienesstest() {
         assertEquals(testfood.getHappieness(), 10);
     }
-    
+
     @Test 
     public void getnutritiontest() {
         assertEquals(testfood.getNutrition(), 10);
