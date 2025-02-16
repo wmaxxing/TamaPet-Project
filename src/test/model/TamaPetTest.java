@@ -149,4 +149,13 @@ public class TamaPetTest {
         assertEquals(testpet.getHappieness(), 0);
         assertEquals(testpet.getSatiation(), 30);
     }
+
+    @Test 
+    public void tamafullcoverage() {
+        testpet.setHappieness(99);
+        testpet.setSatiation(99);
+        testpet.tamaFeed(testFood2);
+        assertEquals(testpet.getHappieness(), 89);
+        assertEquals(testpet.getSatiation(), 100);
+    }
 }

@@ -75,7 +75,7 @@ public class TamaPet {
                 satiation = 100;
             } if (happieness + food.getHappieness() > 0)  {
                 happieness += food.getHappieness();
-            } if (happieness <= 100 - food.getNutrition()) {
+            } if (satiation <= 100 - food.getNutrition()) {
                 satiation += food.getNutrition(); 
             }
         }
