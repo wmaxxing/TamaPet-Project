@@ -16,12 +16,13 @@ public class HistoryLog {
 
     //Effects: returns the TamaHistory element at index of the list
     public TamaHistory getTamaHistory(int index) {
+        return historyList.get(index);
 
     }
 
     //Effects: Adds an element to the HistoryLog
     public void addTamaHistory(TamaHistory add) {
-        
+        historyList.add(add);
     }
     
 }
