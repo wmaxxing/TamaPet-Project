@@ -89,4 +89,9 @@ public class TamaDrawer {
         }
     }
 
+    //Effects: Prints the history log of the TamaPet
+    public void printHistoryLog(HistoryLog historylog) {
+        
+    }
+
 }

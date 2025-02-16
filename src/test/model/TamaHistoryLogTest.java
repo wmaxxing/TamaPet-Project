@@ -32,4 +32,9 @@ public class TamaHistoryLogTest {
         assertEquals(testlog.getTamaHistory(0).getName(), "no");
     }
 
+    @Test 
+    public void tamahistorysizetest() {
+        testlog.addTamaHistory(new TamaHistory("no", "no"));
+        assertEquals(testlog.getSize(), 1);
+    }
 }

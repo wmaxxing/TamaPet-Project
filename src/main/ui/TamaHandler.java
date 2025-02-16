@@ -64,7 +64,6 @@ public class TamaHandler {
                 tamaDrawer.clear();
                 tamaDrawer.printTamaEmotion(tamaPet);
                 System.out.println("The TamaPet does not have enough satiation to play");
-                
             } 
         } else if (command.equals("history")) {
 

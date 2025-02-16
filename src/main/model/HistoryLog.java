@@ -24,5 +24,10 @@ public class HistoryLog {
     public void addTamaHistory(TamaHistory add) {
         historyList.add(add);
     }
+
+    //Effects: Returns the size of the History log
+    public int getSize(){
+        return historyList.size();
+    }
     
 }
