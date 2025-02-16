@@ -30,4 +30,9 @@ public class FoodMenuTest {
         assertEquals(testfm.getTamaFood(1).getName(), "Mochi");
     }
 
+    @Test
+    public void getsizetest() {
+        assertEquals(testfm.getsize(), 6);
+    }
+
 }

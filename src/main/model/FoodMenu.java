@@ -26,4 +26,9 @@ public class FoodMenu {
     public TamaFood getTamaFood(int index) {
         return foodList.get(index);
     }
+
+    //Effects: Returns the size of the foodList
+    public int getsize() {
+        return foodList.size();
+    }
 }
