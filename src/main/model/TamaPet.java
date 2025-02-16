@@ -57,29 +57,35 @@ public class TamaPet {
     //Modifies: this
     //Effects: Allows the user to feed the tama pet increasing satiation and happieness by the
     // amount provided by the food object, the happieness stat is capped at 100 and cannot exceed it
+    @SuppressWarnings("methodlength") // This method must exceed length by 3 lines in order to deal with all edge cases
     public void tamaFeed(TamaFood food) { 
         if (food.getHappieness() >= 0) {
             if (happieness > 100 - food.getHappieness()) {
                 happieness = 100;
-            } if (satiation > 100 - food.getNutrition()) {
+            } 
+            if (satiation > 100 - food.getNutrition()) {
                 satiation = 100;
-            } if (happieness <= 100 - food.getHappieness())  {
+            } 
+            if (happieness <= 100 - food.getHappieness())  {
                 happieness += food.getHappieness();
-            } if (happieness <= 100 - food.getNutrition()) {
+            } 
+            if (happieness <= 100 - food.getNutrition()) {
                 satiation += food.getNutrition(); 
             }
-         } else {
+        } else {
             if (happieness + food.getHappieness() <= 0) {
                 happieness = 0;
-            } if (satiation > 100 - food.getNutrition()) {
+            } 
+            if (satiation > 100 - food.getNutrition()) {
                 satiation = 100;
-            } if (happieness + food.getHappieness() > 0)  {
+            } 
+            if (happieness + food.getHappieness() > 0)  {
                 happieness += food.getHappieness();
-            } if (satiation <= 100 - food.getNutrition()) {
+            } 
+            if (satiation <= 100 - food.getNutrition()) {
                 satiation += food.getNutrition(); 
             }
         }
-
     }
 
     //Effects: returns the name of the TamaPet object
