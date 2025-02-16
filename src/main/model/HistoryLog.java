@@ -26,7 +26,7 @@ public class HistoryLog {
     }
 
     //Effects: Returns the size of the History log
-    public int getSize(){
+    public int getSize() {
         return historyList.size();
     }
     

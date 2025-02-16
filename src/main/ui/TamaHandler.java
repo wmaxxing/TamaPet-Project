@@ -41,33 +41,53 @@ public class TamaHandler {
         }
     }
 
+    //Effects: handles when the feed input call is made 
+    public void functionfeed() {
+        tamaDrawer.clear();
+        FoodMenu tempmenu = new FoodMenu();
+        tamaDrawer.printFoodMenu(tempmenu);
+        int index = input.nextInt();
+        tamaPet.tamaFeed(tempmenu.getTamaFood(index));
+        tamaDrawer.clear();
+        tamaDrawer.printTamaEmotion(tamaPet);
+        TamaHistory curr = new TamaHistory("Feed", "The TamaPet was fed a " + tempmenu.getTamaFood(index).getName());
+        historyLog.addTamaHistory(curr);
+    }
+
+    //Effects: handles when the play input call is made
+    public void functionplay() {
+        boolean curr = tamaPet.tamaPlay();
+        if (curr) {
+            historyLog.addTamaHistory(new TamaHistory("Play", "The TamaPet was played with"));
+            tamaDrawer.clear();
+            tamaDrawer.printTamaEmotion(tamaPet);
+            System.out.println("You sucessfully played with the tama pet");
+        } else if (!curr) {
+            tamaDrawer.clear();
+            tamaDrawer.printTamaEmotion(tamaPet);
+            System.out.println("The TamaPet does not have enough satiation to play");
+        } 
+    }
+
+    //Effects: handles when the history input call is made
+    public void functionhistory() {
+        tamaDrawer.clear();
+        tamaDrawer.printHistoryLog(historyLog);
+        String movecall = input.next(); // this is left unused on purpose in order to hold a call open
+        tamaDrawer.printTamaEmotion(tamaPet);
+    }
+
     //Modifies: this
     //Effects: Processes the incoming command and outputs the desired menu
     private void processCommands(String command) {
         if (command.equals("feed")) {
-            tamaDrawer.clear();
-            FoodMenu tempmenu = new FoodMenu();
-            tamaDrawer.printFoodMenu(tempmenu);
-            int index = input.nextInt();
-            tamaPet.tamaFeed(tempmenu.getTamaFood(index));
-            tamaDrawer.clear();
-            tamaDrawer.printTamaEmotion(tamaPet);
-            historyLog.addTamaHistory(new TamaHistory("Feed", "The TamaPet was fed a " + tempmenu.getTamaFood(index).getName()));
+            functionfeed();
         } else if (command.equals("play")) {
-            boolean curr = tamaPet.tamaPlay();
-            if (curr) {
-                historyLog.addTamaHistory(new TamaHistory("Play", "The TamaPet was played with"));
-                tamaDrawer.clear();
-                tamaDrawer.printTamaEmotion(tamaPet);
-                System.out.println("You sucessfully played with the tama pet");
-            } else if (!curr) {
-                tamaDrawer.clear();
-                tamaDrawer.printTamaEmotion(tamaPet);
-                System.out.println("The TamaPet does not have enough satiation to play");
-            } 
+            functionplay();
         } else if (command.equals("history")) {
-
+            functionhistory();
         } else if (command.equals("quit")) {
+            System.out.println("Goodbye!");
             isRunning = false;
         } else {
             System.out.println("Please Try Another Command (Feed | Play | History | Quit)");

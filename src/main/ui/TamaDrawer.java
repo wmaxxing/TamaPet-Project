@@ -33,7 +33,7 @@ public class TamaDrawer {
         System.out.print("Happiness " + tamaPet.getHappieness());
         System.out.println();
         System.out.println();
-        System.out.println("Type (Feed | Play | History) To Interact");
+        System.out.println("Type (Feed | Play | History | Quit) To Interact");
     }
 
     //Effects: Prints the happy position of the TamaPet displaying mood and stats
@@ -51,6 +51,7 @@ public class TamaDrawer {
         System.out.println();
         System.out.println("Type (Feed | Play | History | Quit) To Interact");
     }
+    
     //Effects: Prints the sad position of the TamaPet displaying mood and stats
     public void tamaSad(TamaPet tamaPet) {
         clear();
@@ -91,7 +92,13 @@ public class TamaDrawer {
 
     //Effects: Prints the history log of the TamaPet
     public void printHistoryLog(HistoryLog historylog) {
-        
+        for (int i = 0; i < historylog.getSize(); i++) {
+            System.out.println(i + ". " + historylog.getTamaHistory(i).getName());
+            System.out.println("Description: " + historylog.getTamaHistory(i).getDesc());
+            System.out.println("Date and Time: " + historylog.getTamaHistory(i).getDateAndTime());
+            System.out.println();
+        }
+        System.out.println("Type anything to return to the main menu");
     }
 
 }
