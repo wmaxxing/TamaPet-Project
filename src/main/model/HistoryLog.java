@@ -31,7 +31,8 @@ public class HistoryLog {
         return historyList.size();
     }
     
-    //Requires: that index is determined for the use case of the function before it is entered and type is not null
+    //Requires: type is not null, if type == "Feed" then FoodMenu Size > index >= 0, 
+    // if type =/= "Feed" then index can be anything
     //Modifies: this
     //Effects: Creates a new TamaHistory object based upon the action performed described by the string
     public void newTamaHistory(String type, int index) {
