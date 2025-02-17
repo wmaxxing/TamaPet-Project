@@ -20,6 +20,7 @@ public class HistoryLog {
 
     }
 
+    //Modifies: this
     //Effects: Adds an element to the HistoryLog
     public void addTamaHistory(TamaHistory add) {
         historyList.add(add);
@@ -30,4 +31,19 @@ public class HistoryLog {
         return historyList.size();
     }
     
+    //Requires: that index is determined for the use case of the function before it is entered and type is not null
+    //Modifies: this
+    //Effects: Creates a new TamaHistory object based upon the action performed described by the string
+    public void newTamaHistory(String type, int index) {
+        if (type.equalsIgnoreCase("Feed")) {
+            FoodMenu tempmenu = new FoodMenu();
+            TamaHistory curr;
+            curr = new TamaHistory("Feed", "The TamaPet was fed a " + tempmenu.getTamaFood(index).getName());
+            historyList.add(curr);
+        } 
+        else { // This is not a else if block due to an error with vscode code coverage test
+            TamaHistory curr = new TamaHistory("Play", "The TamaPet was played with");
+            historyList.add(curr);
+        } 
+    }
 }

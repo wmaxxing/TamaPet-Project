@@ -14,6 +14,7 @@ public class TamaPet {
     private double happieness;
     private String name;
 
+    //Requires: name is not null 
     //Effects: Creates a TamaPet object with satiation and happieness set to DEFAULTVALUE
     public TamaPet(String name) {
         this.name = name;

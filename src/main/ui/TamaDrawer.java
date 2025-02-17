@@ -19,7 +19,7 @@ public class TamaDrawer {
         }
     }
 
-
+    //Requires: tamaPet is not null
     //Effects: Prints the default position of the TamaPet displaying mood and stats
     public void tamaDefault(TamaPet tamaPet) {
         clear();
@@ -36,6 +36,7 @@ public class TamaDrawer {
         System.out.println("Type (Feed | Play | History | Quit) To Interact");
     }
 
+    //Requires: tamaPet is not null
     //Effects: Prints the happy position of the TamaPet displaying mood and stats
     public void tamaHappy(TamaPet tamaPet) {
         clear();
@@ -52,6 +53,7 @@ public class TamaDrawer {
         System.out.println("Type (Feed | Play | History | Quit) To Interact");
     }
     
+    //Requires: tamaPet is not null
     //Effects: Prints the sad position of the TamaPet displaying mood and stats
     public void tamaSad(TamaPet tamaPet) {
         clear();
@@ -68,17 +70,19 @@ public class TamaDrawer {
         System.out.println("Type (Feed | Play | History | Quit) To Interact");
     }
 
+    //Requires: foodmenu is not null
     //Effects: Prints the food menu to the console
     public void printFoodMenu(FoodMenu foodmenu) {
         for (int i = 0; i < foodmenu.getsize(); i++) {
             System.out.println(i + ". " + foodmenu.getTamaFood(i).getName());
-            System.out.println("Happieness: " + foodmenu.getTamaFood(i).getHappieness());
+            System.out.println("Happiness: " + foodmenu.getTamaFood(i).getHappieness());
             System.out.println("Nutrition: " + foodmenu.getTamaFood(i).getNutrition());
             System.out.println();
         }
         System.out.println("Select the number you would like");
     }
 
+    //Requires: tamaPet is not null
     //Effects: Decides the proper version of the TamaPet to print
     public void printTamaEmotion(TamaPet tamaPet) {
         if (tamaPet.getHappieness() >= 70) {
@@ -90,6 +94,7 @@ public class TamaDrawer {
         }
     }
 
+    //Requires: historylog is not null
     //Effects: Prints the history log of the TamaPet
     public void printHistoryLog(HistoryLog historylog) {
         for (int i = 0; i < historylog.getSize(); i++) {

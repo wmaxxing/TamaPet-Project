@@ -41,24 +41,34 @@ public class TamaHandler {
         }
     }
 
+    //Modifies: this
     //Effects: handles when the feed input call is made 
     public void functionfeed() {
         tamaDrawer.clear();
         FoodMenu tempmenu = new FoodMenu();
         tamaDrawer.printFoodMenu(tempmenu);
         int index = input.nextInt();
+        boolean loopindex = true;
+        while (loopindex) {
+            if ((index > tempmenu.getsize() - 1) || (index < 0)) {
+                System.out.println("Invalid selection try again");
+                index = input.nextInt();
+            } else {
+                loopindex = false;
+            }
+        }
         tamaPet.tamaFeed(tempmenu.getTamaFood(index));
         tamaDrawer.clear();
         tamaDrawer.printTamaEmotion(tamaPet);
-        TamaHistory curr = new TamaHistory("Feed", "The TamaPet was fed a " + tempmenu.getTamaFood(index).getName());
-        historyLog.addTamaHistory(curr);
+        historyLog.newTamaHistory("Feed", index);
     }
 
+    //Modifies: this
     //Effects: handles when the play input call is made
     public void functionplay() {
         boolean curr = tamaPet.tamaPlay();
         if (curr) {
-            historyLog.addTamaHistory(new TamaHistory("Play", "The TamaPet was played with"));
+            historyLog.newTamaHistory("Play", -1);
             tamaDrawer.clear();
             tamaDrawer.printTamaEmotion(tamaPet);
             System.out.println("You sucessfully played with the tama pet");
@@ -69,11 +79,12 @@ public class TamaHandler {
         } 
     }
 
+    //Modifies: this
     //Effects: handles when the history input call is made
     public void functionhistory() {
         tamaDrawer.clear();
         tamaDrawer.printHistoryLog(historyLog);
-        String movecall = input.next(); // this is left unused on purpose in order to hold a call open
+        input.next();
         tamaDrawer.printTamaEmotion(tamaPet);
     }
 

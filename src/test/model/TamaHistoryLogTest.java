@@ -37,4 +37,19 @@ public class TamaHistoryLogTest {
         testlog.addTamaHistory(new TamaHistory("no", "no"));
         assertEquals(testlog.getSize(), 1);
     }
+
+    @Test 
+    public void tamahistorynewfeed() {
+        testlog.newTamaHistory("Feed", 0);
+        assertEquals(testlog.getTamaHistory(0).getName(), "Feed");
+        testlog.newTamaHistory("Feed", 1);
+        assertEquals(testlog.getTamaHistory(1).getName(), "Feed");
+    }
+
+    @Test 
+    public void tamahistorynewplay() {
+        testlog.newTamaHistory("Play", 0);
+        assertEquals(testlog.getTamaHistory(0).getName(), "Play");
+    }
+
 }

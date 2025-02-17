@@ -13,6 +13,7 @@ public class TamaHistory {
     private String eventDescription;
     private String formattedDate;
 
+    //Requires: name and eventDescription are not null 
     //Effects: Creats a TamaHistory object
     public TamaHistory(String name, String eventDescription) {
         this.name = name;
