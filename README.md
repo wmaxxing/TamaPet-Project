@@ -24,3 +24,9 @@ This game should appeal to a very general audience and will be made simple enoug
 - I want to be able to play with the pet and see its happiness stat increase 
 
 - I want to be able to view all of the stats of my pet and easily see its current needs 
+
+- I want to be able to save the state of my pet using a save command whenever I choose to do so
+
+- I want to be able to load a saved state of my pet and continue from where I left off if I choose to do so
+
+
