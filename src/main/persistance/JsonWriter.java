@@ -14,31 +14,31 @@ public class JsonWriter {
     private PrintWriter writer;
     private String dest;
 
-    // EFFECTS: constructs writer which can write to the dest file
+    //EFFECTS: constructs writer which can write to the dest file
     public JsonWriter(String destination) {
 
     }
 
-    // MODIFIES: this
-    // EFFECTS: opens writer on the file at dest, if file not found throws FileNotFoundException
+    //MODIFIES: this
+    //EFFECTS: opens writer on the file at dest, if file not found throws FileNotFoundException
     public void open() throws FileNotFoundException {
 
     }
 
-    // MODIFIES: this
-    // EFFECTS: writes JSON representation of a TamaPet and a HistoryLog to a file
+    //MODIFIES: this
+    //EFFECTS: writes JSON representation of a TamaPet and a HistoryLog to a file
     public void write(TamaPet tamaPet, HistoryLog hLog) {
 
     }
 
-    // MODIFIES: this
-    // EFFECTS: closes writer
+    //MODIFIES: this
+    //EFFECTS: closes writer
     public void close() {
 
     }
 
-    // MODIFIES: this
-    // EFFECTS: writes string to file
+    //MODIFIES: this
+    //EFFECTS: writes string to file
     private void saveToFile(String json) {
  
     }

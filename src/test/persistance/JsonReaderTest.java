@@ -14,7 +14,7 @@ public class JsonReaderTest {
             @SuppressWarnings("unused") // Will not be used for correct operation of this test
             TamaPet tamaPet = reader.read();
             @SuppressWarnings("unused") // Will not be used for correct operation of this test
-            HistoryLog testLog = reader.addHistoryLog();
+            HistoryLog testLog = reader.readHistoryLog();
             fail("IOException expected");
         } catch (IOException e) {
             // Expected
@@ -27,7 +27,7 @@ public class JsonReaderTest {
         try {
             TamaPet tamaPet = reader.read();
             assertEquals("emptyname", tamaPet.getName());
-            HistoryLog testLog = reader.addHistoryLog();
+            HistoryLog testLog = reader.readHistoryLog();
             assertEquals(50, tamaPet.getSatiation());
             assertEquals(50, tamaPet.getHappieness());
             assertEquals(testLog.getSize(), 0);
@@ -41,7 +41,7 @@ public class JsonReaderTest {
         JsonReader reader = new JsonReader("./data/readerGeneralTamaPet.json");
         try {
             TamaPet tamaPet = reader.read();
-            HistoryLog testLog = reader.addHistoryLog();
+            HistoryLog testLog = reader.readHistoryLog();
             assertEquals("emptyname", tamaPet.getName());
             assertEquals(1, testLog.getSize());
 
