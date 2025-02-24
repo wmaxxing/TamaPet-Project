@@ -18,13 +18,15 @@ public class JsonReader {
 
     // EFFECTS: constructs reader to read from sourceFile
     public JsonReader(String sourceFile) {
-
+        this.sourceFile = sourceFile;
     }
 
     // EFFECTS: reads a TamaPet from sourceFile and returns it;
     // throws IOException if an error during data reading from sourceFile
     public TamaPet read() throws IOException {
-
+        String jsonData = readFile(sourceFile);
+        JSONObject jsonObject = new JSONObject(jsonData);
+        return parseTamaPet(jsonObject);
     }
 
     // EFFECTS: reads sourceFile and returns it as a string
@@ -33,7 +35,7 @@ public class JsonReader {
     }
 
     // EFFECTS: parses a TamaPet from a JSON object and returns a TamaPet
-    private TamaPet parseWorkRoom(JSONObject jsonObject) {
+    private TamaPet parseTamaPet(JSONObject jsonObject) {
 
     }
 
