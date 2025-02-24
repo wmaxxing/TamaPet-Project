@@ -3,11 +3,15 @@ package model;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
+import org.json.JSONObject;
+
+import persistance.Writable;
+
 // The TamaHistory class will represent a single interaction event with the TamaPet
 // A TamaHistory will have a name, a date, a time, and a string to say what happened 
 // during the interaction with the tama pet
 
-public class TamaHistory {
+public class TamaHistory implements Writable {
 
     private String name; 
     private String eventDescription;
@@ -54,5 +58,15 @@ public class TamaHistory {
     //Effects: sets the date of a tama history object as a formatted string
     public void setDate(String date) {
         this.formattedDate = date;
+    }
+
+    //Effects: Writes a TamaHistory object to Json
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("eventDescription", eventDescription);
+        json.put("formattedDate", formattedDate);
+        return json;
     }
 }

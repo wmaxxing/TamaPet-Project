@@ -1,10 +1,14 @@
 package model;
 
+import org.json.JSONObject;
+
+import persistance.Writable;
+
 // The TamaPet class will represent a pet which will have a satiation meter and 
 // a happieness meter that the user will have to maintain in order to keep the 
 // TamaPet thriving
 
-public class TamaPet {
+public class TamaPet implements Writable {
 
     private static final double DEFAULTVALUE = 50;
     private static final double PLAYHAPPY = 25;
@@ -118,6 +122,16 @@ public class TamaPet {
     //Effects: sets the satiation value of the TamaPet object
     public void setSatiation(double satiation) {
         this.satiation = satiation; 
+    }
+
+    //Effects: Writes a TamaPet object to Json
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("satiation", satiation);
+        json.put("happieness", happieness);
+        return json;
     }
     
 }

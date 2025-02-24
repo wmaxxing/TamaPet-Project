@@ -31,7 +31,7 @@ public class JsonWriter {
         JSONObject jsonpet = tamaPet.toJson();
         JSONObject jsonhistory = hLog.toJson();
         saveToFile(jsonpet.toString(TAB));
-        saveToFile(jsonpet.toString(TAB));
+        saveToFile(jsonhistory.toString(TAB));
     }
 
     //MODIFIES: this
