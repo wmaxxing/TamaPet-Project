@@ -10,7 +10,7 @@ import persistance.Writable;
 // The HistoryLog class respersents a list of TamaHistory events that will show a log of
 // all interactions with the TamaPet
 
-public class HistoryLog implements Writable {
+public class HistoryLog {
 
     private ArrayList<TamaHistory> historyList;
 
@@ -52,16 +52,8 @@ public class HistoryLog implements Writable {
         } 
     }
 
-    //Effects: Writes a HistoryLog Object to Java
-    @Override
-    public JSONObject toJson() {
-        JSONObject json = new JSONObject();
-        json.put("history", tamaHistoryToJson());
-        return json;
-    }
-
     // EFFECTS: returns the TamaHistories in HistoryLog as json objects
-    private JSONArray tamaHistoryToJson() {
+    public JSONArray tamaHistoryToJson() {
         JSONArray jsonArray = new JSONArray();
 
         for (TamaHistory tamaHistory : historyList) {

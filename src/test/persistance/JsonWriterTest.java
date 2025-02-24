@@ -35,10 +35,9 @@ public class JsonWriterTest {
             JsonReader reader = new JsonReader("./data/writerTestEmpty.json");
             tamaPet = reader.read();
             assertEquals("emptyname", tamaPet.getName());
-            testLog = reader.readHistoryLog();
             assertEquals(50, tamaPet.getSatiation());
             assertEquals(50, tamaPet.getHappieness());
-            assertEquals(testLog.getSize(), 0);
+            assertEquals(tamaPet.getHistoryLog().getSize(), 0);
         } catch (IOException e) {
             fail("Non expected error");
         }
@@ -61,10 +60,9 @@ public class JsonWriterTest {
             JsonReader reader = new JsonReader("./data/writerTestGeneralTamaPet.json");
             tamaPet = reader.read();
             assertEquals("newname", tamaPet.getName());
-            testLog = reader.readHistoryLog();
             assertEquals(10, tamaPet.getHappieness());
             assertEquals(100, tamaPet.getSatiation());
-            assertEquals(testLog.getSize(), 0);
+            assertEquals(tamaPet.getHistoryLog().getSize(), 2);
         } catch (IOException e) {
             fail("Non expected error");
         }

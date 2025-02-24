@@ -133,6 +133,7 @@ public class TamaPet implements Writable {
         json.put("name", name);
         json.put("satiation", satiation);
         json.put("happieness", happieness);
+        json.put("history", hLog.tamaHistoryToJson());
         return json;
     }
 

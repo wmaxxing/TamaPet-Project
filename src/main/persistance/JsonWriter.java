@@ -29,9 +29,7 @@ public class JsonWriter {
     //EFFECTS: writes JSON representation of a TamaPet and a HistoryLog to a file
     public void write(TamaPet tamaPet, HistoryLog hLog) {
         JSONObject jsonpet = tamaPet.toJson();
-        JSONObject jsonhistory = hLog.toJson();
         saveToFile(jsonpet.toString(TAB));
-        saveToFile(jsonhistory.toString(TAB));
     }
 
     //MODIFIES: this

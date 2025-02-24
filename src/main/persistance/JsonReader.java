@@ -29,14 +29,6 @@ public class JsonReader {
         return parseTamaPet(jsonObject);
     }
 
-    //EFFECTS: reads a HistoryLog from sourceFile and returns it;
-    // throws IOException if an error during data reading from sourceFile
-    public HistoryLog readHistoryLog() throws IOException {
-        String jsonData = readFile(sourceFile);
-        JSONObject jsonObject = new JSONObject(jsonData);
-        return parseHistoryLog(jsonObject);
-    }
-
     //EFFECTS: reads sourceFile and returns it as a string
     private String readFile(String sourceFile) throws IOException {
         
@@ -58,6 +50,7 @@ public class JsonReader {
         double happieness = jsonObject.getDouble("happieness");
         tamaPet.setSatiation(satiation);
         tamaPet.setHappieness(happieness);
+        tamaPet.setHistoryLog(parseHistoryLog(jsonObject));
         return tamaPet;
     }
 
