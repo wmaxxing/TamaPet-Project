@@ -9,7 +9,7 @@ import java.io.IOException;
 // The TamaHandler class will handle all input coming from the console and allow the 
 public class TamaHandler {
 
-    private static final String JSON_STORE = "./data/tamaPetdata.json";
+    private static final String JSON_STORE = "./data/tamaPetData.json";
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
     private boolean isRunning;
@@ -20,7 +20,7 @@ public class TamaHandler {
 
     //Modifies: this
     //Effects: Creates a new instance of the TamaHander class
-    public TamaHandler() {
+    public TamaHandler() throws FileNotFoundException {
         isRunning = true;
         tamaDrawer = new TamaDrawer();
         input = new Scanner(System.in);
@@ -30,6 +30,8 @@ public class TamaHandler {
         String name = null;
         name = input.next();
         tamaPet = new TamaPet(name);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         tamaRunner();
     }
 
@@ -101,13 +103,17 @@ public class TamaHandler {
             functionplay();
         } else if (command.equals("history")) {
             functionhistory();
+        } else if (command.equals("save")) {
+
+        } else if (command.equals("load")) {
+
         } else if (command.equals("quit")) {
             System.out.println("Goodbye!");
             isRunning = false;
         } else {
-            System.out.println("Please Try Another Command (Feed | Play | History | Quit)");
+            System.out.println("Please Try Another Command (Feed | Play | History | Save | Load | Quit)");
             commands = input.next();
-            commands = commands.toUpperCase();
+            commands = commands.toLowerCase();
             processCommands(commands);
         }
     }

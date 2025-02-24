@@ -33,7 +33,7 @@ public class TamaDrawer {
         System.out.print("Happiness " + tamaPet.getHappieness());
         System.out.println();
         System.out.println();
-        System.out.println("Type (Feed | Play | History | Quit) To Interact");
+        printMenuOptions();
     }
 
     //Requires: tamaPet is not null
@@ -50,7 +50,7 @@ public class TamaDrawer {
         System.out.print("Happiness " + tamaPet.getHappieness());
         System.out.println();
         System.out.println();
-        System.out.println("Type (Feed | Play | History | Quit) To Interact");
+        printMenuOptions();
     }
     
     //Requires: tamaPet is not null
@@ -67,7 +67,7 @@ public class TamaDrawer {
         System.out.print("Happiness " + tamaPet.getHappieness());
         System.out.println();
         System.out.println();
-        System.out.println("Type (Feed | Play | History | Quit) To Interact");
+        printMenuOptions();
     }
 
     //Requires: foodmenu is not null
@@ -103,7 +103,11 @@ public class TamaDrawer {
             System.out.println("Date and Time: " + historylog.getTamaHistory(i).getDateAndTime());
             System.out.println();
         }
-        System.out.println("Type anything to return to the main menu");
+        System.out.println("Type ENTER to return to the main menu");
     }
 
+    //Effects: Prints the menu options for the TamaHandler
+    public void printMenuOptions() {
+        System.out.println("Type (Feed | Play | History | Save | Load | Quit) To Interact");
+    }
 }
