@@ -10,4 +10,38 @@ import java.io.*;
 // Writes a json file to the data folder that represents a TamaPet
 public class JsonWriter {
 
+    private static final int TAB = 4;
+    private PrintWriter writer;
+    private String dest;
+
+    // EFFECTS: constructs writer which can write to the dest file
+    public JsonWriter(String destination) {
+
+    }
+
+    // MODIFIES: this
+    // EFFECTS: opens writer on the file at dest, if file not found throws FileNotFoundException
+    public void open() throws FileNotFoundException {
+
+    }
+
+    // MODIFIES: this
+    // EFFECTS: writes JSON representation of a TamaPet to a file
+    public void write(TamaPet tamaPet) {
+
+    }
+
+    // MODIFIES: this
+    // EFFECTS: closes writer
+    public void close() {
+
+    }
+
+    // MODIFIES: this
+    // EFFECTS: writes string to file
+    private void saveToFile(String json) {
+ 
+    }
+    
+
 }

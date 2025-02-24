@@ -14,4 +14,33 @@ import org.json.*;
 // Reads a json file from the data folder that represents a TamaPet
 public class JsonReader {
 
+    private String sourceFile;
+
+    // EFFECTS: constructs reader to read from sourceFile
+    public JsonReader(String sourceFile) {
+
+    }
+
+    // EFFECTS: reads a TamaPet from sourceFile and returns it;
+    // throws IOException if an error during data reading from sourceFile
+    public TamaPet read() throws IOException {
+
+    }
+
+    // EFFECTS: reads sourceFile and returns it as a string
+    private String readFile(String sourceFile) throws IOException {
+
+    }
+
+    // EFFECTS: parses a TamaPet from a JSON object and returns a TamaPet
+    private TamaPet parseWorkRoom(JSONObject jsonObject) {
+
+    }
+
+    // MODIFIES: tamaPet
+    // EFFECTS: parses history log from a json file and adds it to a TamaPet
+    private void addHistorLog(TamaPet tamaPet, JSONObject jsonObject) {
+
+    }
+
 }
