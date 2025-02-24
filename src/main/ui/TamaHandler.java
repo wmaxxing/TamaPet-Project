@@ -1,11 +1,17 @@
 package ui;
 
 import model.*;
+import persistance.*;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 // The TamaHandler class will handle all input coming from the console and allow the 
 public class TamaHandler {
 
+    private static final String JSON_STORE = "./data/petdata.json";
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
     private boolean isRunning;
     private TamaDrawer tamaDrawer;
     private TamaPet tamaPet;
