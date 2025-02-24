@@ -25,7 +25,7 @@ public class JsonWriterTest {
     @Test
     void testWriterEmptyTamaPet() {
         try {
-            TamaPet tamaPet = new TamaPet("testname");
+            TamaPet tamaPet = new TamaPet("emptyname");
             HistoryLog testLog = new HistoryLog();
             JsonWriter writer = new JsonWriter("./data/writerTestEmpty.json");
             writer.open();

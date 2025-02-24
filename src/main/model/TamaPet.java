@@ -6,7 +6,7 @@ import persistance.Writable;
 
 // The TamaPet class will represent a pet which will have a satiation meter and 
 // a happieness meter that the user will have to maintain in order to keep the 
-// TamaPet thriving
+// TamaPet thriving it will also have a history list of all interactions with the pet
 
 public class TamaPet implements Writable {
 
@@ -17,13 +17,15 @@ public class TamaPet implements Writable {
     private double satiation;
     private double happieness;
     private String name;
+    private HistoryLog hLog;
 
     //Requires: name is not null 
-    //Effects: Creates a TamaPet object with satiation and happieness set to DEFAULTVALUE
+    //Effects: Creates a TamaPet object with satiation and happieness set to DEFAULTVALUE and an empty history log
     public TamaPet(String name) {
         this.name = name;
         this.satiation = DEFAULTVALUE; 
         this.happieness = DEFAULTVALUE;
+        this.hLog = new HistoryLog();
     }
 
     //Modifies: this 
@@ -132,6 +134,17 @@ public class TamaPet implements Writable {
         json.put("satiation", satiation);
         json.put("happieness", happieness);
         return json;
+    }
+
+    //Effects: returns the historylog hLog of this TamaPet
+    public HistoryLog getHistoryLog() {
+        return this.hLog;
+    }
+
+    //Modifies: this 
+    //Effects: sets the historylog hLog of this TamaPet
+    public void setHistoryLog(HistoryLog hLog) {
+        this.hLog = hLog; 
     }
     
 }

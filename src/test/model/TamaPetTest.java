@@ -24,6 +24,7 @@ public class TamaPetTest {
         assertEquals(contest.getName(), testpet.getName());
         assertEquals(contest.getHappieness(), testpet.getHappieness());
         assertEquals(contest.getSatiation(), testpet.getSatiation());
+        assertEquals(contest.getHistoryLog().getSize(), 0);
     }
 
     @Test 
@@ -42,6 +43,13 @@ public class TamaPetTest {
     }
 
     @Test 
+    public void gethistorylogtest() {
+        HistoryLog tLog = new HistoryLog();
+        testpet.setHistoryLog(tLog);
+        assertEquals(testpet.getHistoryLog(), tLog);
+    }
+
+    @Test 
     public void setnametest() {
         testpet.setName("Bear");
         assertEquals(testpet.getName(), "Bear");
@@ -57,6 +65,13 @@ public class TamaPetTest {
     public void setnutritiontest() {
         testpet.setSatiation(10);
         assertEquals(testpet.getSatiation(), 10);
+    }
+
+    @Test 
+    public void setHistoryLogTest() {
+        HistoryLog tLog = new HistoryLog();
+        testpet.setHistoryLog(tLog);
+        assertTrue(testpet.getHistoryLog().equals(tLog));
     }
 
     @Test
