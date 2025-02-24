@@ -3,9 +3,7 @@ package model;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
-import persistance.Writable;
 
 // The HistoryLog class respersents a list of TamaHistory events that will show a log of
 // all interactions with the TamaPet

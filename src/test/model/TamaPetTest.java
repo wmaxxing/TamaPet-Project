@@ -44,9 +44,9 @@ public class TamaPetTest {
 
     @Test 
     public void gethistorylogtest() {
-        HistoryLog tLog = new HistoryLog();
-        testpet.setHistoryLog(tLog);
-        assertEquals(testpet.getHistoryLog(), tLog);
+        HistoryLog hisLog = new HistoryLog();
+        testpet.setHistoryLog(hisLog);
+        assertEquals(testpet.getHistoryLog(), hisLog);
     }
 
     @Test 
@@ -69,9 +69,9 @@ public class TamaPetTest {
 
     @Test 
     public void setHistoryLogTest() {
-        HistoryLog tLog = new HistoryLog();
-        testpet.setHistoryLog(tLog);
-        assertTrue(testpet.getHistoryLog().equals(tLog));
+        HistoryLog hisLog = new HistoryLog();
+        testpet.setHistoryLog(hisLog);
+        assertTrue(testpet.getHistoryLog().equals(hisLog));
     }
 
     @Test

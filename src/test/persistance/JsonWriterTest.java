@@ -10,10 +10,7 @@ public class JsonWriterTest {
     @Test
     void testWriteBadFile() {
         try {
-            @SuppressWarnings("unused") // Will not be used for correct operation of this test
             TamaPet tamaPet = new TamaPet("testname");
-            @SuppressWarnings("unused") // Will not be used for correct operation of this test
-            HistoryLog testLog = new HistoryLog();
             JsonWriter writer = new JsonWriter("./data/\0");
             writer.open();
             fail("IOException should have been thrown");
@@ -26,10 +23,9 @@ public class JsonWriterTest {
     void testWriterEmptyTamaPet() {
         try {
             TamaPet tamaPet = new TamaPet("emptyname");
-            HistoryLog testLog = new HistoryLog();
             JsonWriter writer = new JsonWriter("./data/writerTestEmpty.json");
             writer.open();
-            writer.write(tamaPet, testLog);
+            writer.write(tamaPet);
             writer.close();
 
             JsonReader reader = new JsonReader("./data/writerTestEmpty.json");
@@ -49,12 +45,11 @@ public class JsonWriterTest {
             TamaPet tamaPet = new TamaPet("newname");
             tamaPet.setHappieness(10);
             tamaPet.setSatiation(100);
-            HistoryLog testLog = new HistoryLog();
-            testLog.newTamaHistory("Feed" , 1);
-            testLog.newTamaHistory("Play", -1);
+            tamaPet.getHistoryLog().newTamaHistory("Feed", 1);
+            tamaPet.getHistoryLog().newTamaHistory("Play", -1);
             JsonWriter writer = new JsonWriter("./data/writerTestGeneralTamaPet.json");
             writer.open();
-            writer.write(tamaPet, testLog);
+            writer.write(tamaPet);
             writer.close();
 
             JsonReader reader = new JsonReader("./data/writerTestGeneralTamaPet.json");

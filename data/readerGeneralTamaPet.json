@@ -1,0 +1,12 @@
+{
+    "name": "generalname",
+    "history": [
+        {
+            "formattedDate": "Sun, Feb 23 2025 23:50:44",
+            "name": "Feed",
+            "eventDescription": "The TamaPet was fed a Mochi"
+        }
+    ],
+    "happieness": 10,
+    "satiation": 100
+}

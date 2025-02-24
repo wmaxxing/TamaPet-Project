@@ -56,7 +56,7 @@ public class JsonReader {
 
     //EFFECTS: parses history log from a json file and adds it to a HistoryLog object
     public HistoryLog parseHistoryLog(JSONObject jsonObject) {
-        HistoryLog hLog = new HistoryLog();
+        HistoryLog hisLog = new HistoryLog();
         JSONArray jsonArray = jsonObject.getJSONArray("history");
         for (Object json : jsonArray) {
             JSONObject nextHistory = (JSONObject) json;
@@ -65,9 +65,9 @@ public class JsonReader {
             String formattedDate = nextHistory.getString("formattedDate");
             TamaHistory tempHistory = new TamaHistory(name, eventDescription);
             tempHistory.setDate(formattedDate);
-            hLog.addTamaHistory(tempHistory);
+            hisLog.addTamaHistory(tempHistory);
         }
-        return hLog;
+        return hisLog;
     }
 
 }

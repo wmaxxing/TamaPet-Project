@@ -17,7 +17,7 @@ public class TamaPet implements Writable {
     private double satiation;
     private double happieness;
     private String name;
-    private HistoryLog hLog;
+    private HistoryLog hisLog;
 
     //Requires: name is not null 
     //Effects: Creates a TamaPet object with satiation and happieness set to DEFAULTVALUE and an empty history log
@@ -25,7 +25,7 @@ public class TamaPet implements Writable {
         this.name = name;
         this.satiation = DEFAULTVALUE; 
         this.happieness = DEFAULTVALUE;
-        this.hLog = new HistoryLog();
+        this.hisLog = new HistoryLog();
     }
 
     //Modifies: this 
@@ -133,19 +133,19 @@ public class TamaPet implements Writable {
         json.put("name", name);
         json.put("satiation", satiation);
         json.put("happieness", happieness);
-        json.put("history", hLog.tamaHistoryToJson());
+        json.put("history", hisLog.tamaHistoryToJson());
         return json;
     }
 
-    //Effects: returns the historylog hLog of this TamaPet
+    //Effects: returns the historylog hisLog of this TamaPet
     public HistoryLog getHistoryLog() {
-        return this.hLog;
+        return this.hisLog;
     }
 
     //Modifies: this 
-    //Effects: sets the historylog hLog of this TamaPet
-    public void setHistoryLog(HistoryLog hLog) {
-        this.hLog = hLog; 
+    //Effects: sets the historylog hisLog of this TamaPet
+    public void setHistoryLog(HistoryLog hisLog) {
+        this.hisLog = hisLog; 
     }
     
 }

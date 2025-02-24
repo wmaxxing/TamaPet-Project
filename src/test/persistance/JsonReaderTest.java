@@ -11,7 +11,6 @@ public class JsonReaderTest {
     void testReaderNoFile() {
         JsonReader reader = new JsonReader("./data/nonExistant.json");
         try {
-            @SuppressWarnings("unused") // Will not be used for correct operation of this test
             TamaPet tamaPet = reader.read();
             fail("IOException expected");
         } catch (IOException e) {
@@ -38,7 +37,7 @@ public class JsonReaderTest {
         JsonReader reader = new JsonReader("./data/readerGeneralTamaPet.json");
         try {
             TamaPet tamaPet = reader.read();
-            assertEquals("emptyname", tamaPet.getName());
+            assertEquals("generalname", tamaPet.getName());
             assertEquals(1, tamaPet.getHistoryLog().getSize());
 
         } catch (IOException e) {
