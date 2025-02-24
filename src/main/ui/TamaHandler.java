@@ -9,7 +9,7 @@ import java.io.IOException;
 // The TamaHandler class will handle all input coming from the console and allow the 
 public class TamaHandler {
 
-    private static final String JSON_STORE = "./data/petdata.json";
+    private static final String JSON_STORE = "./data/tamaPetdata.json";
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
     private boolean isRunning;

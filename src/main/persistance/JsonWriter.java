@@ -26,8 +26,8 @@ public class JsonWriter {
     }
 
     // MODIFIES: this
-    // EFFECTS: writes JSON representation of a TamaPet to a file
-    public void write(TamaPet tamaPet) {
+    // EFFECTS: writes JSON representation of a TamaPet and a HistoryLog to a file
+    public void write(TamaPet tamaPet, HistoryLog hLog) {
 
     }
 

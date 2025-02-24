@@ -38,8 +38,8 @@ public class JsonReader {
     }
 
     // MODIFIES: tamaPet
-    // EFFECTS: parses history log from a json file and adds it to a TamaPet
-    private void addHistorLog(TamaPet tamaPet, JSONObject jsonObject) {
+    // EFFECTS: parses history log from a json file and adds it to a HistoryLog object
+    public HistoryLog addHistoryLog() {
 
     }
 
