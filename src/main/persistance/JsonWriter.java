@@ -15,32 +15,35 @@ public class JsonWriter {
     private String dest;
 
     //EFFECTS: constructs writer which can write to the dest file
-    public JsonWriter(String destination) {
-
-    }
+    public JsonWriter(String dest) {
+        this.dest = dest;
+    }   
 
     //MODIFIES: this
     //EFFECTS: opens writer on the file at dest, if file not found throws FileNotFoundException
     public void open() throws FileNotFoundException {
-
+        writer = new PrintWriter(new File(dest));
     }
 
     //MODIFIES: this
     //EFFECTS: writes JSON representation of a TamaPet and a HistoryLog to a file
     public void write(TamaPet tamaPet, HistoryLog hLog) {
-
+        JSONObject jsonpet = tamaPet.toJson();
+        JSONObject jsonhistory = hLog.toJson();
+        saveToFile(jsonpet.toString(TAB));
+        saveToFile(jsonpet.toString(TAB));
     }
 
     //MODIFIES: this
     //EFFECTS: closes writer
     public void close() {
-
+        writer.close();
     }
 
     //MODIFIES: this
     //EFFECTS: writes string to file
     private void saveToFile(String json) {
- 
+        writer.print(json);
     }
     
 
