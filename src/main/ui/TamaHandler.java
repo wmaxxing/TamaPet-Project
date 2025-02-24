@@ -17,7 +17,6 @@ public class TamaHandler {
     private TamaPet tamaPet;
     private Scanner input;
     private String commands;
-    private HistoryLog historyLog;
 
     //Modifies: this
     //Effects: Creates a new instance of the TamaHander class
@@ -31,7 +30,6 @@ public class TamaHandler {
         String name = null;
         name = input.next();
         tamaPet = new TamaPet(name);
-        historyLog = new HistoryLog();
         tamaRunner();
     }
 
@@ -66,7 +64,7 @@ public class TamaHandler {
         tamaPet.tamaFeed(tempmenu.getTamaFood(index));
         tamaDrawer.clear();
         tamaDrawer.printTamaEmotion(tamaPet);
-        historyLog.newTamaHistory("Feed", index);
+        tamaPet.getHistoryLog().newTamaHistory("Feed", index);
     }
 
     //Modifies: this
@@ -74,7 +72,7 @@ public class TamaHandler {
     public void functionplay() {
         boolean curr = tamaPet.tamaPlay();
         if (curr) {
-            historyLog.newTamaHistory("Play", -1);
+            tamaPet.getHistoryLog().newTamaHistory("Play", -1);
             tamaDrawer.clear();
             tamaDrawer.printTamaEmotion(tamaPet);
             System.out.println("You sucessfully played with the tama pet");
@@ -89,7 +87,7 @@ public class TamaHandler {
     //Effects: handles when the history input call is made
     public void functionhistory() {
         tamaDrawer.clear();
-        tamaDrawer.printHistoryLog(historyLog);
+        tamaDrawer.printHistoryLog(tamaPet.getHistoryLog());
         input.next();
         tamaDrawer.printTamaEmotion(tamaPet);
     }
