@@ -53,12 +53,14 @@ public class TamaHandler {
         tamaDrawer.clear();
         FoodMenu tempmenu = new FoodMenu();
         tamaDrawer.printFoodMenu(tempmenu);
-        int index = input.nextInt();
+        int index = -1;
         boolean loopindex = true;
         while (loopindex) {
+            index = validinput();
+
             if ((index > tempmenu.getsize() - 1) || (index < 0)) {
                 System.out.println("Invalid selection try again");
-                index = input.nextInt();
+                continue;
             } else {
                 loopindex = false;
             }
@@ -104,9 +106,9 @@ public class TamaHandler {
         } else if (command.equals("history")) {
             functionhistory();
         } else if (command.equals("save")) {
-
+            saveTamaPet();
         } else if (command.equals("load")) {
-
+            loadTamaPet();
         } else if (command.equals("quit")) {
             System.out.println("Goodbye!");
             isRunning = false;
@@ -116,5 +118,46 @@ public class TamaHandler {
             commands = commands.toLowerCase();
             processCommands(commands);
         }
+    }
+
+    // EFFECTS: saves the TamaPet to a file
+    private void saveTamaPet() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(tamaPet);
+            jsonWriter.close();
+            System.out.println("Saved " + tamaPet.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads a Tamapet from a file
+    private void loadTamaPet() {
+        try {
+            tamaPet = jsonReader.read();
+            tamaDrawer.clear();
+            tamaDrawer.printTamaEmotion(tamaPet);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
+    }
+
+    //Effects: Decides the input is a valid int 
+    public int validinput() {
+        int index = -1; 
+        boolean validInput = false;
+
+        while (!validInput) {
+            if (input.hasNextInt()) {
+                index = input.nextInt();
+                validInput = true;
+            } else {
+                System.out.println("Invalid selection try again");
+                input.next();
+            }
+        }
+        return index; 
     }
 }

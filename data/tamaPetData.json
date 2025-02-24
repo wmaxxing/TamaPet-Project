@@ -1,0 +1,32 @@
+{
+    "name": "leo",
+    "history": [
+        {
+            "formattedDate": "Mon, Feb 24 2025 00:34:09",
+            "name": "Feed",
+            "eventDescription": "The TamaPet was fed a Chicken Salad"
+        },
+        {
+            "formattedDate": "Mon, Feb 24 2025 00:34:11",
+            "name": "Play",
+            "eventDescription": "The TamaPet was played with"
+        },
+        {
+            "formattedDate": "Mon, Feb 24 2025 00:34:15",
+            "name": "Feed",
+            "eventDescription": "The TamaPet was fed a Mochi"
+        },
+        {
+            "formattedDate": "Mon, Feb 24 2025 00:36:03",
+            "name": "Feed",
+            "eventDescription": "The TamaPet was fed a Bacon Cheeseburger"
+        },
+        {
+            "formattedDate": "Mon, Feb 24 2025 00:36:09",
+            "name": "Play",
+            "eventDescription": "The TamaPet was played with"
+        }
+    ],
+    "happieness": 100,
+    "satiation": 70
+}
