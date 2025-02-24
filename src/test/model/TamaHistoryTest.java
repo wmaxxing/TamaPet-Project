@@ -42,4 +42,14 @@ public class TamaHistoryTest {
     public void getdatandtimetest() {
         assertEquals(testhistory.getDateAndTime(), dt.format(dtf));
     }
+    
+    @Test
+    public void testSetters() {
+        testhistory.setName("placeholder");
+        testhistory.setDesc("placeholder");
+        testhistory.setDate("placeholder");
+        assertEquals(testhistory.getName(), "placeholder");
+        assertEquals(testhistory.getDesc(), "placeholder");
+        assertEquals(testhistory.getDateAndTime(), "placeholder");
+    }
 }

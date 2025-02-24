@@ -37,4 +37,22 @@ public class TamaHistory {
     public String getDateAndTime() {
         return this.formattedDate;
     }
+
+    //Modifies: this
+    //Effects: sets the name of a TamaHistory object
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    //Modifies: this
+    //Effects: sets the event description of a TamaHistory object
+    public void setDesc(String desc) {
+        this.eventDescription = desc;
+    }
+
+    //Modifies: this
+    //Effects: sets the date of a tama history object as a formatted string
+    public void setDate(String date) {
+        this.formattedDate = date;
+    }
 }
