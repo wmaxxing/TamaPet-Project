@@ -38,7 +38,7 @@ public class TamaHandler {
     //Modifies: this
     //Effects: Runs the main loop of the TamaProgram
     public void tamaRunner() {
-        tamaDrawer.tamaDefault();
+        tamaDrawer.tamaDefault(tamaPet);
 
         while (isRunning) {
             commands = input.next();
@@ -114,6 +114,9 @@ public class TamaHandler {
             isRunning = false;
         } else if (command.equals("stats")) {
             tamaDrawer.tamaStats(tamaPet);
+            input.next();
+            tamaDrawer.clear();
+            tamaDrawer.printTamaEmotion(tamaPet);
         } else {
             System.out.println("Please Try Another Command (Feed | Play | History | Stats | Save | Load | Quit)");
             commands = input.next();
