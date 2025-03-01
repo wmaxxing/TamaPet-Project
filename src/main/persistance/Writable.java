@@ -7,6 +7,6 @@ import org.json.JSONObject;
 
 // Takes a tamaPet and returns it as a json object 
 public interface Writable {
-
+    //Effects: returns this object as a JSON object
     JSONObject toJson();
 }

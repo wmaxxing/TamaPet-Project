@@ -42,6 +42,7 @@ public class JsonReader {
 
     }
 
+    //MODFIFES: tamaPet
     //EFFECTS: parses a TamaPet from a JSON object and returns a TamaPet
     private TamaPet parseTamaPet(JSONObject jsonObject) {
         String name = jsonObject.getString("name");
@@ -54,6 +55,7 @@ public class JsonReader {
         return tamaPet;
     }
 
+    //MODIFIES: hisLog
     //EFFECTS: parses history log from a json file and adds it to a HistoryLog object
     public HistoryLog parseHistoryLog(JSONObject jsonObject) {
         HistoryLog hisLog = new HistoryLog();

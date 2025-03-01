@@ -1,37 +1,6 @@
 {
     "name": "hello",
-    "history": [
-        {
-            "formattedDate": "Fri, Feb 28 2025 16:34:57",
-            "name": "Feed",
-            "eventDescription": "The TamaPet was fed a Chicken Salad"
-        },
-        {
-            "formattedDate": "Fri, Feb 28 2025 16:35:00",
-            "name": "Feed",
-            "eventDescription": "The TamaPet was fed a Lettuce"
-        },
-        {
-            "formattedDate": "Fri, Feb 28 2025 16:35:01",
-            "name": "Feed",
-            "eventDescription": "The TamaPet was fed a Baby Carrots"
-        },
-        {
-            "formattedDate": "Fri, Feb 28 2025 16:35:04",
-            "name": "Feed",
-            "eventDescription": "The TamaPet was fed a Baby Carrots"
-        },
-        {
-            "formattedDate": "Fri, Feb 28 2025 16:35:05",
-            "name": "Feed",
-            "eventDescription": "The TamaPet was fed a Baby Carrots"
-        },
-        {
-            "formattedDate": "Fri, Feb 28 2025 16:35:07",
-            "name": "Feed",
-            "eventDescription": "The TamaPet was fed a Baby Carrots"
-        }
-    ],
-    "happieness": 5,
-    "satiation": 100
+    "history": [],
+    "happieness": 50,
+    "satiation": 50
 }

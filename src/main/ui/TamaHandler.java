@@ -73,7 +73,7 @@ public class TamaHandler {
 
     //Modifies: this
     //Effects: handles when the play input call is made
-    public void functionplay() {
+    public void functionPlay() {
         boolean curr = tamaPet.tamaPlay();
         if (curr) {
             tamaPet.getHistoryLog().newTamaHistory("Play", -1);
@@ -87,12 +87,19 @@ public class TamaHandler {
         } 
     }
 
-    //Modifies: this
     //Effects: handles when the history input call is made
-    public void functionhistory() {
+    public void functionHistory() {
         tamaDrawer.clear();
         tamaDrawer.printHistoryLog(tamaPet.getHistoryLog());
         input.next();
+        tamaDrawer.printTamaEmotion(tamaPet);
+    }
+
+    //Effects; handles printing the stats of the TamaPet
+    public void functionStats() {
+        tamaDrawer.tamaStats(tamaPet);
+        input.next();
+        tamaDrawer.clear();
         tamaDrawer.printTamaEmotion(tamaPet);
     }
 
@@ -102,9 +109,9 @@ public class TamaHandler {
         if (command.equals("feed")) {
             functionfeed();
         } else if (command.equals("play")) {
-            functionplay();
+            functionPlay();
         } else if (command.equals("history")) {
-            functionhistory();
+            functionHistory();
         } else if (command.equals("save")) {
             saveTamaPet();
         } else if (command.equals("load")) {
@@ -113,10 +120,7 @@ public class TamaHandler {
             System.out.println("Goodbye!");
             isRunning = false;
         } else if (command.equals("stats")) {
-            tamaDrawer.tamaStats(tamaPet);
-            input.next();
-            tamaDrawer.clear();
-            tamaDrawer.printTamaEmotion(tamaPet);
+            functionStats();
         } else {
             System.out.println("Please Try Another Command (Feed | Play | History | Stats | Save | Load | Quit)");
             commands = input.next();
