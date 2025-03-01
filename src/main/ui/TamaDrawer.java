@@ -19,55 +19,50 @@ public class TamaDrawer {
         }
     }
 
-    //Requires: tamaPet is not null
-    //Effects: Prints the default position of the TamaPet displaying mood and stats
-    public void tamaDefault(TamaPet tamaPet) {
+    //Effects: Prints the default position of the TamaPet
+    public void tamaDefault() {
         clear();
         System.out.println("                  /\\_/\\  ");
         System.out.println("                 ( o.o )  Hello!");
         System.out.println("                 >  ~  <  ");
         System.out.println("                 /|   |\\  ");
         System.out.println("                (_|   |_) ");
-        System.out.print("Satiation: " + tamaPet.getSatiation());
-        System.out.print(" | " + tamaPet.getName() + " | ");
-        System.out.print("Happiness " + tamaPet.getHappieness());
-        System.out.println();
         System.out.println();
         printMenuOptions();
     }
 
-    //Requires: tamaPet is not null
-    //Effects: Prints the happy position of the TamaPet displaying mood and stats
-    public void tamaHappy(TamaPet tamaPet) {
+    //Effects: Prints the happy position of the TamaPet
+    public void tamaHappy() {
         clear();
         System.out.println("                  /\\_/\\  ");
         System.out.println("                 ( ^_^ )  <3!");
         System.out.println("                 >  ~  <  ");
         System.out.println("                 /|   |\\  ");
         System.out.println("                (_|   |_) ");
-        System.out.print("Satiation: " + tamaPet.getSatiation());
-        System.out.print(" | " + tamaPet.getName() + " | ");
-        System.out.print("Happiness " + tamaPet.getHappieness());
-        System.out.println();
         System.out.println();
         printMenuOptions();
     }
     
-    //Requires: tamaPet is not null
-    //Effects: Prints the sad position of the TamaPet displaying mood and stats
-    public void tamaSad(TamaPet tamaPet) {
+    //Effects: Prints the sad position of the TamaPet
+    public void tamaSad() {
         clear();
         System.out.println("                  /\\_/\\  ");
         System.out.println("                 ( >_< )  @&%$?#!");
         System.out.println("                 >  ~  <  ");
         System.out.println("                 /|   |\\  ");
         System.out.println("                (_|   |_) ");
+        System.out.println();
+        printMenuOptions();
+    }
+
+    //Effects: Prints the stats of the tama pet to the console
+    public void tamaStats(TamaPet tamaPet) {
+        System.out.println();
         System.out.print("Satiation: " + tamaPet.getSatiation());
         System.out.print(" | " + tamaPet.getName() + " | ");
         System.out.print("Happiness " + tamaPet.getHappieness());
         System.out.println();
-        System.out.println();
-        printMenuOptions();
+        System.out.println("Type ENTER to return to the main menu");
     }
 
     //Requires: foodmenu is not null
@@ -86,11 +81,11 @@ public class TamaDrawer {
     //Effects: Decides the proper version of the TamaPet to print
     public void printTamaEmotion(TamaPet tamaPet) {
         if (tamaPet.getHappieness() >= 70) {
-            tamaHappy(tamaPet);
+            tamaHappy();
         } else if (tamaPet.getHappieness() <= 30) {
-            tamaSad(tamaPet);
+            tamaSad();
         } else {
-            tamaDefault(tamaPet);
+            tamaDefault();
         }
     }
 
@@ -108,6 +103,6 @@ public class TamaDrawer {
 
     //Effects: Prints the menu options for the TamaHandler
     public void printMenuOptions() {
-        System.out.println("Type (Feed | Play | History | Save | Load | Quit) To Interact");
+        System.out.println("Type (Feed | Play | History | Stats | Save | Load | Quit) To Interact");
     }
 }

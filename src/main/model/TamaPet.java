@@ -32,7 +32,7 @@ public class TamaPet implements Writable {
     //Effects: Decays the happieness and satiation by 0.1 every x mins the program is running
     // in order to promote intreacting with the TamaPet if the TamaPet has any stat that is 0
     // then the stat remains at 0 and does not go negative
-    public void tamaDecay() {
+    public void tamaDecay() { // This method has not yet to be implemented
         if (satiation >= 0.1) {
             satiation -= DECAYVAL;
         }
