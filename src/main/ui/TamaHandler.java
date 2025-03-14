@@ -3,12 +3,14 @@ package ui;
 import model.*;
 import persistance.*;
 import java.util.Scanner;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 // The TamaHandler class will handle all input coming from the console and allow the 
 public class TamaHandler {
 
+    private GuiHandler gui;
     private static final String JSON_STORE = "./data/tamaPetData.json";
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
@@ -29,6 +31,7 @@ public class TamaHandler {
         System.out.println("What would you like to name your TamaPet?");
         String name = null;
         name = input.next();
+        gui = new GuiHandler(this);
         tamaPet = new TamaPet(name);
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
@@ -130,7 +133,7 @@ public class TamaHandler {
     }
 
     // EFFECTS: saves the TamaPet to a file
-    private void saveTamaPet() {
+    public void saveTamaPet() {
         try {
             jsonWriter.open();
             jsonWriter.write(tamaPet);
@@ -143,7 +146,7 @@ public class TamaHandler {
 
     // MODIFIES: this
     // EFFECTS: loads a Tamapet from a file
-    private void loadTamaPet() {
+    public void loadTamaPet() {
         try {
             tamaPet = jsonReader.read();
             tamaDrawer.clear();
@@ -168,5 +171,10 @@ public class TamaHandler {
             }
         }
         return index; 
+    }
+
+    //Effects: Getter for the history log
+    public HistoryLog getHistoryLog() {
+        return tamaPet.getHistoryLog();
     }
 }

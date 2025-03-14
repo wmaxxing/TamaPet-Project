@@ -29,4 +29,16 @@ This game should appeal to a very general audience and will be made simple enoug
 
 - I want to be able to load a saved state of my pet and continue from where I left off if I choose to do so
 
+<h2> Instructions for End User <h2>
 
+- You can generate a list of all of the history events from the history log by pressing the DISPLAY ALL button in the GUI
+
+- You can generate a subset list of all of the FEED history events from the history log by pressing the FEED button in the GUI
+
+- You can generate a subset list of all of the PLAY history events from the history log by pressing the PLAY button in the GUI
+
+- You can locate the visual componenet of the project by pressing the SAVE button in the GUI
+
+- You can save the state of the application by pressing the SAVE button in the GUI
+
+- You can load the state of the application by pressing the LOAD button in the GUI

@@ -16,7 +16,7 @@ public class FoodMenu {
         foodList.add(new TamaFood("Bacon Cheeseburger", 15, 10));
         foodList.add(new TamaFood("Mochi", 20, 5));
         foodList.add(new TamaFood("Lettuce", -10, 15));
-        foodList.add(new TamaFood("Baby Carrots", -15, 10));
+        foodList.add(new TamaFood("Baby Carrot", -15, 10));
         foodList.add(new TamaFood("Tuna Steak", 20, 20));
         foodList.add(new TamaFood("Chicken Salad", 25, 25));
     }
