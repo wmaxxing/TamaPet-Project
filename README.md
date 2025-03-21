@@ -29,7 +29,7 @@ This game should appeal to a very general audience and will be made simple enoug
 
 - I want to be able to load a saved state of my pet and continue from where I left off if I choose to do so
 
-<h2> Instructions for End User <h2>
+<h2> Instructions for End User </h2>
 
 - You can generate a list of all of the history events from the history log by pressing the DISPLAY ALL button in the GUI
 

@@ -32,7 +32,7 @@ public class GuiHandler implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         imageIcon = new ImageIcon("./data/image.png");
-        image = imageIcon.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
+        image = imageIcon.getImage().getScaledInstance(500, 400, Image.SCALE_SMOOTH);
         resizedIcon = new ImageIcon(image);
         label = new JLabel(resizedIcon);
         panel.add(label);
