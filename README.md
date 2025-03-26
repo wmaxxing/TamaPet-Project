@@ -69,3 +69,14 @@ The tama pet was saved
 Event: 5
 Tue Mar 25 23:07:07 PDT 2025
 The tama pet was loaded
+
+<h2> Phase 4: Task 3 </h2>
+
+Looking at the UML_Design_Diagram file provided, if I had more time to work on this project, I would make several refactoring changes.
+
+The first change would be to apply the Singleton design pattern to the FoodMenu class. This would prevent the list of food items from being regenerated in multiple places, making the program more efficient. Additionally, I would implement a HashMap in the FoodMenu class, as it would provide faster lookups and better suit the class's needs.
+
+For the GUI class, I would develop a more efficient way to handle input and create buttons. The current implementation is somewhat cumbersome and does not follow clean, methodical design principles.
+
+Finally, I would remove the bi-directional relationship between TamaHandler and GuiHandler. The TamaHandler having access to the GuiHandler does not provide any meaningful functionality, it was implemented as a precautionary measure but never found a relevant use case.
+
