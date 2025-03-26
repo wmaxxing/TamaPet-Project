@@ -177,4 +177,14 @@ public class TamaHandler {
     public HistoryLog getHistoryLog() {
         return tamaPet.getHistoryLog();
     }
+
+    //Effects: Getter for the TamaPet
+    public TamaPet getTamaPet() {
+        return tamaPet;
+    }
+
+    //Effects: Getter for the TamaDrawer
+    public TamaDrawer getTamaDrawer() {
+        return tamaDrawer;
+    }
 }

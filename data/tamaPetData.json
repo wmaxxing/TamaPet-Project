@@ -1,6 +1,17 @@
 {
     "name": "h",
-    "history": [],
-    "happieness": 50,
-    "satiation": 50
+    "history": [
+        {
+            "formattedDate": "Tue, Mar 25 2025 20:00:08",
+            "name": "Play",
+            "eventDescription": "The TamaPet was played with"
+        },
+        {
+            "formattedDate": "Tue, Mar 25 2025 20:00:11",
+            "name": "Feed",
+            "eventDescription": "The TamaPet was fed a Chicken Salad"
+        }
+    ],
+    "happieness": 100,
+    "satiation": 65
 }

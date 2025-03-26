@@ -31,11 +31,17 @@ This game should appeal to a very general audience and will be made simple enoug
 
 <h2> Instructions for End User </h2>
 
+- You feed the pet by pressing the FEED button in the GUI
+
+- You can play with the pet by pressing the PLAY button in the GUI
+
+- You can print the pets stats by pet by pressing the STATS button in the GUI
+
 - You can generate a list of all of the history events from the history log by pressing the DISPLAY ALL button in the GUI
 
-- You can generate a subset list of all of the FEED history events from the history log by pressing the FEED button in the GUI
+- You can generate a subset list of all of the FEED history events from the history log by pressing the DISPLAY FEED button in the GUI
 
-- You can generate a subset list of all of the PLAY history events from the history log by pressing the PLAY button in the GUI
+- You can generate a subset list of all of the PLAY history events from the history log by pressing the DISPLAY PLAY button in the GUI
 
 - You can locate the visual componenet of the project by pressing the SAVE button in the GUI
 
