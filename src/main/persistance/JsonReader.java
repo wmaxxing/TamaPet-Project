@@ -24,6 +24,7 @@ public class JsonReader {
     //EFFECTS: reads a TamaPet from sourceFile and returns it;
     // throws IOException if an error during data reading from sourceFile
     public TamaPet read() throws IOException {
+        EventLog.getInstance().logEvent(new Event("The tama pet was loaded"));
         String jsonData = readFile(sourceFile);
         JSONObject jsonObject = new JSONObject(jsonData);
         return parseTamaPet(jsonObject);

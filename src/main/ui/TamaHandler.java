@@ -71,7 +71,7 @@ public class TamaHandler {
         tamaPet.tamaFeed(tempmenu.getTamaFood(index));
         tamaDrawer.clear();
         tamaDrawer.printTamaEmotion(tamaPet);
-        tamaPet.getHistoryLog().newTamaHistory("Feed", index);
+        tamaPet.addTamaHistory("Feed", index);
     }
 
     //Modifies: this
@@ -79,7 +79,7 @@ public class TamaHandler {
     public void functionPlay() {
         boolean curr = tamaPet.tamaPlay();
         if (curr) {
-            tamaPet.getHistoryLog().newTamaHistory("Play", -1);
+            tamaPet.addTamaHistory("Play", 0);
             tamaDrawer.clear();
             tamaDrawer.printTamaEmotion(tamaPet);
             System.out.println("You sucessfully played with the tama pet");
@@ -120,8 +120,9 @@ public class TamaHandler {
         } else if (command.equals("load")) {
             loadTamaPet();
         } else if (command.equals("quit")) {
-            System.out.println("Goodbye!");
+            tamaDrawer.printLoggedEvents();
             isRunning = false;
+            System.exit(0);
         } else if (command.equals("stats")) {
             functionStats();
         } else {

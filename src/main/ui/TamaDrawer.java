@@ -1,5 +1,7 @@
 package ui;
 
+import java.util.Iterator;
+
 import model.*;
 
 // The TamaDrawer class wil handle drawing all of the other classes outputs into
@@ -107,5 +109,18 @@ public class TamaDrawer {
     //Effects: Prints the menu options for the TamaHandler
     public void printMenuOptions() {
         System.out.println("Type (Feed | Play | History | Stats | Save | Load | Quit) To Interact");
+    }
+
+    //Effects: Prints the logged history events to the console
+    public void printLoggedEvents() {
+        EventLog el = EventLog.getInstance();
+        int i = 1;
+        for (Event curr : el) {
+            System.out.println("Event: " + i);
+            System.out.println(curr.toString());
+            System.out.println("");
+            i++;
+        }
+        
     }
 }

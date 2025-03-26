@@ -48,3 +48,24 @@ This game should appeal to a very general audience and will be made simple enoug
 - You can save the state of the application by pressing the SAVE button in the GUI
 
 - You can load the state of the application by pressing the LOAD button in the GUI
+
+<h2> Phase 4: Task 2 </h2>
+Event: 1
+Tue Mar 25 23:07:02 PDT 2025
+The tama pet was fed a Mochi and gained 50.0 Satiation and 50.0 Happieness
+
+Event: 2
+Tue Mar 25 23:07:03 PDT 2025
+The tama pet was played with
+
+Event: 3
+Tue Mar 25 23:07:05 PDT 2025
+The history log or a subset of the history log was displayed
+
+Event: 4
+Tue Mar 25 23:07:06 PDT 2025
+The tama pet was saved
+
+Event: 5
+Tue Mar 25 23:07:07 PDT 2025
+The tama pet was loaded

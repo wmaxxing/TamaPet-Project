@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.*;
 
 // The GUI handler class handles the GUI for the TamaHandler Class 
@@ -21,7 +23,6 @@ public class GuiHandler implements ActionListener {
     private JLabel label;
     private Image image;
     private ImageIcon resizedIcon;
-    private Button btnSave; 
     private ArrayList<JButton> blist;
     private ArrayList<JButton> fbList;
     private ArrayList<String> bstrings;
@@ -47,6 +48,12 @@ public class GuiHandler implements ActionListener {
         blist = new ArrayList<>();
         fbList = new ArrayList<>();
         buttonSetterUpper();
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                tamaHandler.getTamaDrawer().printLoggedEvents();
+            }
+        });
     }
 
     //Modifies: This
@@ -153,7 +160,7 @@ public class GuiHandler implements ActionListener {
         tamaHandler.getTamaPet().tamaFeed(tempmenu.getTamaFood(index));
         tamaHandler.getTamaDrawer().clear();
         tamaHandler.getTamaDrawer().printTamaEmotion(tamaHandler.getTamaPet());
-        tamaHandler.getTamaPet().getHistoryLog().newTamaHistory("Feed", index);
+        tamaHandler.getTamaPet().addTamaHistory("Feed", index);
     }
 
     //Effects: Displays the TamaPets stats to the GUI
@@ -168,7 +175,7 @@ public class GuiHandler implements ActionListener {
         textField.setText("You Played With The TamaPet");
         boolean curr = tamaHandler.getTamaPet().tamaPlay();
         if (curr) {
-            tamaHandler.getTamaPet().getHistoryLog().newTamaHistory("Play", -1);
+            tamaHandler.getTamaPet().addTamaHistory("Play", 0);
             tamaHandler.getTamaDrawer().clear();
             tamaHandler.getTamaDrawer().printTamaEmotion(tamaHandler.getTamaPet());
             System.out.println("You sucessfully played with the tama pet");

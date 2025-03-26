@@ -46,6 +46,7 @@ public class TamaPet implements Writable {
     // satiation by PLAYHUNGER returns true if the play is successful and false if they TamaPet does not 
     // have enough satiation to play, the happieness stat is capped at 100 and cannot exceed it
     public boolean tamaPlay() { 
+        EventLog.getInstance().logEvent(new Event("The tama pet was played with"));
         if (satiation >= PLAYHUNGER) {
             if (happieness > 75) {
                 happieness = 100;
@@ -64,7 +65,9 @@ public class TamaPet implements Writable {
     //Modifies: this
     //Effects: Allows the user to feed the tama pet increasing satiation and happieness by the
     // amount provided by the food object, the happieness stat is capped at 100 and cannot exceed it
-    public void tamaFeed(TamaFood food) { 
+    public void tamaFeed(TamaFood food) {
+        EventLog.getInstance().logEvent(new Event("The tama pet was fed a " + food.getName() + " and gained " 
+                + getSatiation() + " Satiation and " + getHappieness() + " Happieness"));
         if (food.getHappieness() >= 0) {
             if (happieness > 100 - food.getHappieness()) {
                 happieness = 100;
@@ -77,16 +80,22 @@ public class TamaPet implements Writable {
                 satiation += food.getNutrition();
             }
         } else {
-            if (happieness + food.getHappieness() <= 0) {
-                happieness = 0;
-            } else {
-                happieness += food.getHappieness();
-            }
-            if (satiation > 100 - food.getNutrition()) {
-                satiation = 100;
-            } else {
-                satiation += food.getNutrition();
-            }
+            zeroHappieness(food);
+        }
+    }
+
+    //Modifies: This
+    //Effects: deals with the case where happieness is less than or equal to zero
+    private void zeroHappieness(TamaFood food) {
+        if (happieness + food.getHappieness() <= 0) {
+            happieness = 0;
+        } else {
+            happieness += food.getHappieness();
+        }
+        if (satiation > 100 - food.getNutrition()) {
+            satiation = 100;
+        } else {
+            satiation += food.getNutrition();
         }
     }
 
@@ -139,6 +148,7 @@ public class TamaPet implements Writable {
 
     //Effects: returns the historylog hisLog of this TamaPet
     public HistoryLog getHistoryLog() {
+        EventLog.getInstance().logEvent(new Event("The history log or a subset of the history log was displayed"));
         return this.hisLog;
     }
 
@@ -146,6 +156,12 @@ public class TamaPet implements Writable {
     //Effects: sets the historylog hisLog of this TamaPet
     public void setHistoryLog(HistoryLog hisLog) {
         this.hisLog = hisLog; 
+    }
+
+    //Modifies: this
+    //Effects: adds a new TamaHistory to the TamaPet
+    public void addTamaHistory(String type, int index) {
+        hisLog.newTamaHistory(type, index);
     }
     
 }

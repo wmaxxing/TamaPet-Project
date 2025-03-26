@@ -28,6 +28,7 @@ public class JsonWriter {
     //MODIFIES: this
     //EFFECTS: writes JSON representation of a TamaPet
     public void write(TamaPet tamaPet) {
+        EventLog.getInstance().logEvent(new Event("The tama pet was saved"));
         JSONObject jsonpet = tamaPet.toJson();
         saveToFile(jsonpet.toString(TAB));
     }
