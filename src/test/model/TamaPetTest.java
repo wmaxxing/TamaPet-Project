@@ -72,6 +72,8 @@ public class TamaPetTest {
         HistoryLog hisLog = new HistoryLog();
         testpet.setHistoryLog(hisLog);
         assertTrue(testpet.getHistoryLog().equals(hisLog));
+        testpet.addTamaHistory("Food", 0);
+        assertEquals(hisLog.getSize(), 1);
     }
 
     @Test
